@@ -1,18 +1,19 @@
 package com.ps.tests;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import com.ps.config.factory.ConfigFactory;
+import com.ps.driver.factory.web.remote.RemoteDriverFactory;
+
 public class DemoTest {
-	
+
 	@Test
 	public void testLogin() {
-		System.out.println(com.ps.config.ConfigFactory.getConfig().browser());
-		
-		//WebDriver driver = new ChromeDriver();
-		//driver.get("https://google.com");
-		//driver.quit();
+		WebDriver driver = RemoteDriverFactory.getDriver(ConfigFactory.getConfig().browserRemoteMode(),
+				ConfigFactory.getConfig().browser());
+		driver.get("https://google.com");
+
 	}
 
 }

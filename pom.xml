@@ -1,27 +1,29 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>MasterFramework</groupId>
 	<artifactId>MasterFramework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
-	 <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
-        <owner.version>1.0.12</owner.version>
-        <appium.java.version>8.3.0</appium.java.version>
-        <extentreport.version>5.0.9</extentreport.version>
-        <restassured.version>5.3.0</restassured.version>
-        <jackson.version>2.14.2</jackson.version>
-        <testdatasupplier.version>2.2.0</testdatasupplier.version>
-        <assertjcore.version>3.24.2</assertjcore.version>
-        <testng.version>7.7.1</testng.version>
-        <selenium.version>4.8.1</selenium.version>
-        <lombok.version>1.18.26</lombok.version>
-        <javafaker.version>1.0.2</javafaker.version>
-        <awaitility.version>4.2.0</awaitility.version>
-        <noexception.version>1.9.0</noexception.version>
-    </properties>
-	
+
+	<properties>
+		<maven.compiler.source>19</maven.compiler.source>
+		<maven.compiler.target>19</maven.compiler.target>
+		<owner.version>1.0.12</owner.version>
+		<appium.java.version>8.3.0</appium.java.version>
+		<extentreport.version>5.0.9</extentreport.version>
+		<restassured.version>5.3.0</restassured.version>
+		<jackson.version>2.14.2</jackson.version>
+		<testdatasupplier.version>2.2.0</testdatasupplier.version>
+		<assertjcore.version>3.24.2</assertjcore.version>
+		<testng.version>7.7.1</testng.version>
+		<selenium.version>4.8.1</selenium.version>
+		<lombok.version>1.18.26</lombok.version>
+		<javafaker.version>1.0.2</javafaker.version>
+		<awaitility.version>4.2.0</awaitility.version>
+		<noexception.version>1.9.0</noexception.version>
+	</properties>
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/com.machinezoo.noexception/noexception -->
 		<dependency>
@@ -107,5 +109,5 @@
 			<version>${javafaker.version}</version>
 		</dependency>
 	</dependencies>
-	
+
 </project>
