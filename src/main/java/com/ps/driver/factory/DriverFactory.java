@@ -6,10 +6,10 @@ import java.util.function.Supplier;
 
 import com.ps.driver.IMobileDriver;
 import com.ps.driver.IWebDriver;
-import com.ps.driver.LocalMobileDriverImpl;
-import com.ps.driver.LocalWebDriverImpl;
-import com.ps.driver.RemoteMobileDriverImpl;
-import com.ps.driver.RemoteWebDriverImpl;
+import com.ps.driver.impl.mobile.LocalMobileDriverImpl;
+import com.ps.driver.impl.mobile.RemoteMobileDriverImpl;
+import com.ps.driver.impl.web.LocalWebDriverImpl;
+import com.ps.driver.impl.web.RemoteWebDriverImpl;
 import com.ps.enums.RunModeType;
 
 public final class DriverFactory {

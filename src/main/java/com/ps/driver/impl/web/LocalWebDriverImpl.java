@@ -1,7 +1,8 @@
-package com.ps.driver;
+package com.ps.driver.impl.web;
 
 import org.openqa.selenium.WebDriver;
 
+import com.ps.driver.IWebDriver;
 import com.ps.driver.entity.WebDriverData;
 import com.ps.driver.factory.web.local.LocalDriverFactory;
 
