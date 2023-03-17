@@ -23,9 +23,16 @@
 		<awaitility.version>4.2.0</awaitility.version>
 		<noexception.version>1.9.0</noexception.version>
 		<fixture.factory.version>3.1.0</fixture.factory.version>
+		<junit.jupiter.version>5.9.2</junit.jupiter.version>
 	</properties>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+    		<groupId>org.junit.jupiter</groupId>
+    		<artifactId>junit-jupiter</artifactId>
+    		<version>${junit.jupiter.version}</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/br.com.six2six/fixture-factory -->
 		<dependency>
     		<groupId>br.com.six2six</groupId>
@@ -116,5 +123,77 @@
 			<version>${javafaker.version}</version>
 		</dependency>
 	</dependencies>
+	
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <reuseForks>false</reuseForks>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.2.1</version>
+                <configuration>
+                    <consoleOutput>true</consoleOutput>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    <failOnViolation>true</failOnViolation>
+                    <failsOnError>true</failsOnError>
+                    <configLocation>config/checkstyle/checkstyle.xml</configLocation>
+                    <suppressionsLocation>config/checkstyle/suppressions.xml</suppressionsLocation>
+                    <suppressionsFileExpression>suppressions.xml</suppressionsFileExpression>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+        	<plugins>
+        		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        		<plugin>
+        			<groupId>org.eclipse.m2e</groupId>
+        			<artifactId>lifecycle-mapping</artifactId>
+        			<version>1.0.0</version>
+        			<configuration>
+        				<lifecycleMappingMetadata>
+        					<pluginExecutions>
+        						<pluginExecution>
+        							<pluginExecutionFilter>
+        								<groupId>
+        									org.apache.maven.plugins
+        								</groupId>
+        								<artifactId>
+        									maven-checkstyle-plugin
+        								</artifactId>
+        								<versionRange>
+        									[3.2.1,)
+        								</versionRange>
+        								<goals>
+        									<goal>check</goal>
+        								</goals>
+        							</pluginExecutionFilter>
+        							<action>
+        								<ignore></ignore>
+        							</action>
+        						</pluginExecution>
+        					</pluginExecutions>
+        				</lifecycleMappingMetadata>
+        			</configuration>
+        		</plugin>
+        	</plugins>
+        </pluginManagement>
+	</build>
 
 </project>

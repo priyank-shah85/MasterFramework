@@ -2,8 +2,8 @@ package com.ps.fixtures.addusers.templates;
 
 import com.github.javafaker.Faker;
 import com.ps.fixtures.addusers.entity.UserData;
-import com.ps.pages.enums.addusercomponent.StatusType;
-import com.ps.pages.enums.addusercomponent.UserRoleType;
+import com.ps.pages.web.enums.addusercomponent.StatusType;
+import com.ps.pages.web.enums.addusercomponent.UserRoleType;
 
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.Rule;

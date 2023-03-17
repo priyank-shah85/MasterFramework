@@ -1,7 +1,7 @@
 package com.ps.fixtures.addusers.entity;
 
-import com.ps.pages.enums.addusercomponent.StatusType;
-import com.ps.pages.enums.addusercomponent.UserRoleType;
+import com.ps.pages.web.enums.addusercomponent.StatusType;
+import com.ps.pages.web.enums.addusercomponent.UserRoleType;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

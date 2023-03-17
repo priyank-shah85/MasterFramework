@@ -1,20 +1,28 @@
 package com.ps.tests.web.base;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
 import com.ps.driver.Driver;
 
+import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
+
 public class WebBase {
 
-	@BeforeMethod
+	@BeforeAll
+	public static void beforeAll() {
+		FixtureFactoryLoader.loadTemplates("com.ps.fixtures");
+	}
+	
+	@BeforeEach
 	public void setUp() {
 		Driver.initDriverForWeb();
 	}
 	
-	@AfterMethod
+	@AfterEach
 	public void tearDown() {
-		Driver.quiteDriver();
+		Driver.quitDriver();
 	}
 
 }

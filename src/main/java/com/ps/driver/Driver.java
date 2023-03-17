@@ -32,19 +32,18 @@ public final class Driver {
 		DriverManager.getDriver().get(getConfig().webUrl());
 	}
 	
-	public static void initDriverForMobile() {
+	public static void initDriverForMobile(MobilePlatformType mobilePlatformType) {
 		// local mobile, remote mobile
 		
 		if(Objects.isNull(DriverManager.getDriver())) {
-			MobileDriverData driverData = new MobileDriverData(MobilePlatformType.ANDROID
-					, getConfig().mobileRemoteMode());
+			MobileDriverData driverData = new MobileDriverData(mobilePlatformType, getConfig().mobileRemoteMode());
 			
 			WebDriver driver = DriverFactory.getDriverForMobile(getConfig().mobileRunMode()).getDriver(driverData);
 			DriverManager.setDriver(driver);
 		}
 	}
 
-	public static void quiteDriver() {
+	public static void quitDriver() {
 		if(Objects.nonNull(DriverManager.getDriver())) {
 			DriverManager.getDriver().quit();
 			DriverManager.unload();

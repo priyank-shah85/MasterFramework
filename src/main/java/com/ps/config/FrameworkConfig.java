@@ -5,12 +5,14 @@ import java.net.URL;
 import org.aeonbits.owner.Config;
 
 import com.ps.config.converters.StringToBrowserTypeConverter;
+import com.ps.config.converters.StringToMobilePlatformTypeConverter;
 import com.ps.config.converters.StringToMobileRemoteModeTypeConverter;
 import com.ps.config.converters.StringToRemoteModeBrowserTypeConverter;
 import com.ps.config.converters.StringToRunModeBrowserTypeConverter;
 import com.ps.config.converters.StringToURLConverter;
 import com.ps.enums.BrowserRemoteModeType;
 import com.ps.enums.BrowserType;
+import com.ps.enums.MobilePlatformType;
 import com.ps.enums.MobileRemoteModeType;
 import com.ps.enums.RunModeType;
 
@@ -59,4 +61,8 @@ public interface FrameworkConfig extends Config{
 	@Key("mobileRemoteMode")
 	@ConverterClass(StringToMobileRemoteModeTypeConverter.class)
 	MobileRemoteModeType mobileRemoteMode();
+	
+	@ConverterClass(StringToMobilePlatformTypeConverter.class)
+	@DefaultValue("android")
+	MobilePlatformType mobilePlatformType();
 }

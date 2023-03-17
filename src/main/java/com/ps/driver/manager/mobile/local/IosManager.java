@@ -3,10 +3,10 @@ package com.ps.driver.manager.mobile.local;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.ps.config.factory.ConfigFactory;
 
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileBrowserType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
@@ -23,7 +23,7 @@ public final class IosManager {
 		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, MobileBrowserType.SAFARI);
 		
 		//capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir")+"/ios-app.apk");
-		return new RemoteWebDriver(ConfigFactory.getConfig().localAppiumServerURL(), capabilities);
+		return new IOSDriver(ConfigFactory.getConfig().localAppiumServerURL(), capabilities);
 	}
 
 }

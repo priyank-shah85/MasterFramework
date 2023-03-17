@@ -1,14 +1,19 @@
 package com.ps.tests.mobile;
 
-import org.testng.annotations.Test;
+import static com.ps.pages.mobile.enums.ViewScreenMenuItemType.WEB_VIEW;
 
-import com.ps.tests.mobile.base.MobileBase;
+import org.junit.jupiter.api.Test;
 
-public class AndroidTest extends MobileBase{
+import com.ps.pages.mobile.MobileHomeScreen;
+import com.ps.tests.mobile.base.AndroidSetUp;
+
+public class AndroidTest extends AndroidSetUp{
 	
 	@Test
 	public void testLoginAndroid() {
-		
+		MobileHomeScreen.getMobileHomePage()
+			.navigateToViewsScreen()
+			.clickOnViewScreenElement(WEB_VIEW);
 	}
 
 }
