@@ -1,0 +1,1 @@
+This is single framework to automate web, mobile and API test cases. It was updated with API assertions using AssertJ library. You can use it for your live project.
